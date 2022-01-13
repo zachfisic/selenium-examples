@@ -39,9 +39,7 @@ def find_with_sleep(url, xpath):
 '''
 Method 2: Using implicit wait
 
-By implicitly waiting, the WebDriver polls the DOM for a certain duration when trying to find any element. This can be useful when certain elements on the webpage are not available immediately and need some time to load. Implicit waiting for elements to appear is disabled by default and will need to be manually enabled on a per-session basis. Mixing explicit waits and implicit waits is not recommended and will cause unintended consequences, namely waits sleeping for the maximum time even if the element is available or condition is true. For example, setting an implicit wait of 10 seconds and an explicit wait of 15 seconds could cause a timeout to occur after 20 seconds.
-
-An implicit wait is to tell WebDriver to poll the DOM for a certain amount of time when trying to find an element or elements if they are not immediately available. The default setting is 0, meaning disabled. Once set, the implicit wait is set for the life of the session.
+By implicitly waiting, the WebDriver polls the DOM for a certain duration when trying to find any element. This can be useful when certain elements on the webpage are not available immediately and need some time to load. Implicit waiting for elements to appear is disabled by default and will need to be manually enabled on a per-session basis. Mixing explicit waits and implicit waits is not recommended and will cause unintended consequences, namely waits sleeping for the maximum time even if the element is available or condition is true.
 '''
 def find_with_implicit_wait(url, xpath):
     driver.implicitly_wait(10)
@@ -55,9 +53,9 @@ def find_with_implicit_wait(url, xpath):
 '''
 Method 3: Using explicit wait
 
-When you use an explicit wait, the WebDriver is directed to wait until a certain condition occurs before proceeding with executing the code. In effect, you halt program execution, or freeze the thread, until the condition you specify has resolved. The condition is called with a certain frequency until the timeout of the wait is elapsed. This means that for as long as the condition returns a falsy value, it will keep trying and waiting.
+When you use an explicit wait, the WebDriver is directed to wait until a certain condition occurs before proceeding, freezing the current thread. The condition is called with a certain frequency until the timeout of the wait is elapsed. This means that for as long as the condition returns a falsy value, it will keep trying and waiting.
 
-Explicit wait is more intelligent, but can only be applied against elements you've specified. However, it is an improvement on implicit wait since it allows the program to pause for dynamically loaded elements. With implicit waits, the browser will always wait for the same amount of time before trying to find any element
+Explicit wait is intelligent, but can only be applied against elements you've specified. It's seen an improvement on implicit wait since it allows the program to pause for dynamically loaded elements. With implicit waits, the browser will always wait for the same amount of time before trying to find any element.
 
 Some methods used in conjuction with explicit waits:
 
